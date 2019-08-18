@@ -8,40 +8,40 @@ final case class PowerOn()
 final case class PowerOff()
 
 // states
-sealed trait LightSwitchState
-case object On extends LightSwitchState
-case object Off extends LightSwitchState
+sealed trait AlarmClockState
+case object OnAlarm extends AlarmClockState
+case object OffAlarm extends AlarmClockState
 
 //data
-sealed trait LightSwitchData
-case object NoData extends LightSwitchData
+sealed trait AlarmClockData
+case object NoData extends AlarmClockData
 
-class LightSwitchActor extends FSM[LightSwitchState, LightSwitchData] {
+class AlarmClockActor extends FSM[AlarmClockState, AlarmClockData] {
 
-  startWith(Off, NoData)
+  startWith(OffAlarm, NoData)
 
-  when(Off) {
+  when(OffAlarm) {
     case Event(PowerOn, _) =>
-      goto(On) using NoData
+      goto(OnAlarm) using NoData
   }
 
-  when(On, stateTimeout = 1 second) {
+  when(OnAlarm, stateTimeout = 1 second) {
     case Event(PowerOff, _) =>
-      goto(Off) using NoData
+      goto(OffAlarm) using NoData
     case Event(StateTimeout, _) =>
-      println("'On' state timed out, moving to 'Off'")
-      goto(Off) using NoData
+      println("'On' state timed out, moving to 'OffAlarm'")
+      goto(OffAlarm) using NoData
   }
 
   whenUnhandled {
     case Event(e, s) =>
       log.warning("received unhandled request {} in state {}/{}", e, stateName, s)
-      goto(Off) using NoData
+      goto(OffAlarm) using NoData
   }
 
   onTransition {
-    case Off -> On => println("Moved from Off to On")
-    case On -> Off => println("Moved from On to Off")
+    case OffAlarm -> OnAlarm => println("Moved from Off to On")
+    case OnAlarm -> OffAlarm => println("Moved from On to Off")
   }
 
   initialize()
