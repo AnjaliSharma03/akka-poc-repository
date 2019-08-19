@@ -1,4 +1,4 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.{FSM}
 import scala.concurrent.duration._

@@ -1,10 +1,10 @@
-package com.akka.knoldus
+package com.akka.actors
 
-
-import akka.actor.{ActorSystem}
+import akka.actor.ActorSystem
 import akka.testkit.{ImplicitSender, TestKit}
 import org.scalatest._
 import akka.testkit.TestFSMRef
+
 import scala.concurrent.duration._
 
 class AlarmClockFSMActorTests

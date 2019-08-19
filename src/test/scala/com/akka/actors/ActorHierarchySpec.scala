@@ -1,9 +1,9 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import org.scalatest.MustMatchers
-import akka.actor.{ ActorSystem, Props, ActorRefFactory }
-import akka.testkit.{ TestKit, TestProbe, ImplicitSender }
-import org.scalatest.{ FlatSpecLike, BeforeAndAfterAll }
+import akka.actor.{ActorRefFactory, ActorSystem, Props}
+import akka.testkit.{ImplicitSender, TestKit, TestProbe}
+import org.scalatest.{BeforeAndAfterAll, FlatSpecLike}
 
 class ActorHierarchySpec extends TestKit(ActorSystem("test-system"))
   with ImplicitSender

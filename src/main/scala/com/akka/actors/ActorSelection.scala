@@ -1,7 +1,7 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
-import com.akka.knoldus.ActorSelectionProtocol.{GetCount, Increment}
+import com.akka.actors.ActorSelectionProtocol.{GetCount, Increment}
 
 object ActorSelectionProtocol{
   case class Increment()

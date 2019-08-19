@@ -1,9 +1,10 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.ActorSystem
 import akka.testkit.{DefaultTimeout, ImplicitSender, TestActorRef, TestKit}
-import com.akka.knoldus.ActorAskProtocol.Info
+import com.akka.actors.ActorAskProtocol.Info
 import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpecLike}
+
 import scala.util.Success
 
 class AskActorTests
