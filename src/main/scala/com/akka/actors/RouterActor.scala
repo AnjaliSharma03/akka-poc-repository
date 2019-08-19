@@ -1,4 +1,4 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 import akka.routing.{BroadcastPool, RoundRobinPool, ScatterGatherFirstCompletedPool}
@@ -20,9 +20,4 @@ object RoundRobinPoolApp extends App {
   val broadcastRouter =
     actorSystem.actorOf(BroadcastPool(3).props(Props[RouterActor]))
   broadcastRouter ! "hello"
-  val props = actorSystem.actorOf(ScatterGatherFirstCompletedPool(
-    nrOfInstances = 5,
-    within = 5 seconds
-  ).props(Props[RouterActor]))
-  props ! "hey"
 }

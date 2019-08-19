@@ -1,9 +1,9 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 import akka.pattern._
 import akka.util.Timeout
-import com.akka.knoldus.ActorAskProtocol.{CheckInfo, Info}
+import ActorAskProtocol.{CheckInfo, Info}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.concurrent.duration._

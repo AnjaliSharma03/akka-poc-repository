@@ -1,9 +1,10 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{TestKit, TestProbe}
 import akka.util.Timeout
 import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpecLike}
+
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import akka.pattern.ask

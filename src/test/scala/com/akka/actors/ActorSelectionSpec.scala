@@ -1,9 +1,9 @@
-package com.akka.knoldus
+package com.akka.actors
 
 import org.scalatest.MustMatchers
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{ImplicitSender, TestKit, TestProbe}
-import com.akka.knoldus.ActorSelectionProtocol.{GetCount, Increment}
+import com.akka.actors.ActorSelectionProtocol.{GetCount, Increment}
 import org.scalatest.{BeforeAndAfterAll, FlatSpecLike}
 
 class ActorSelectionSpec extends TestKit(ActorSystem("test-system"))
