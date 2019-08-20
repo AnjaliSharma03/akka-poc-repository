@@ -13,12 +13,12 @@ object Demo extends App {
       "demo-persistent-actor-1")
 
  // persistentActor ! "print"
-  persistentActor ! Cmd("foo")
-  persistentActor ! Cmd("baz")
+  persistentActor ! Command("foo")
+  persistentActor ! Command("baz")
  // persistentActor ! "boom"
-  persistentActor ! Cmd("bar")
+  persistentActor ! Command("bar")
   persistentActor ! "snap"
-  persistentActor ! Cmd("buzz")
+  persistentActor ! Command("buzz")
   persistentActor ! "print"
 
 

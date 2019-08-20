@@ -2,32 +2,32 @@ package com.akka.persistence
 
 import akka.persistence._
 
-case class Evt(data: String)
-case class Cmd(data: String)
+case class Event(data: String)
+case class Command(data: String)
 
 class DemoPersistentActor extends PersistentActor {
 
   //note : This is  mutable
-  var state = ExampleState()
+  var state = DemoState()
 
-  def updateState(event: Evt): Unit =
+  def updateState(event: Event): Unit =
     state = state.updated(event)
 
   def numEvents =
     state.size
 
   val receiveRecover: Receive = {
-    case evt: Evt => updateState(evt)
-    case SnapshotOffer(_, snapshot: ExampleState) => {
+    case evt: Event => updateState(evt)
+    case SnapshotOffer(_, snapshot: DemoState) => {
       println(s"offered state = $snapshot")
       state = snapshot
     }
   }
 
   val receiveCommand: Receive = {
-    case Cmd(data) =>
-      persist(Evt(s"${data}-${numEvents}"))(updateState)
-      persist(Evt(s"${data}-${numEvents + 1}")) { event =>
+    case Command(data) =>
+      persist(Event(s"${data}-${numEvents}"))(updateState)
+      persist(Event(s"${data}-${numEvents + 1}")) { event =>
         updateState(event)
         context.system.eventStream.publish(event)
       }

@@ -1,6 +1,7 @@
-package com.akka.actors
+package com.akka.fsm
 
-import akka.actor.{FSM}
+import akka.actor.FSM
+
 import scala.concurrent.duration._
 
 // received events

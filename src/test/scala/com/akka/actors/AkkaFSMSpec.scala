@@ -4,6 +4,7 @@ import akka.actor.ActorSystem
 import akka.testkit.{ImplicitSender, TestKit}
 import org.scalatest._
 import akka.testkit.TestFSMRef
+import com.akka.fsm.{AlarmClockActor, NoData, OffAlarm, OnAlarm, PowerOn}
 
 import scala.concurrent.duration._
 
