@@ -9,7 +9,7 @@
 		extra-sbtVersion="1.0"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190819143957"/>
+		date="20190819190153"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="1.2.8" status="release" pubdate="20181229115743" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sbt/sbt" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
@@ -110,7 +110,7 @@
 		<module organisation="org.apache.logging.log4j" name="log4j-slf4j-impl">
 			<revision name="2.11.1" status="release" pubdate="20180723091707" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="75">
 				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="38280" time="0" location="/home/knoldus/.ivy2/cache/org.apache.logging.log4j/log4j-slf4j-impl/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.11.1/log4j-slf4j-impl-2.11.1.pom"/>
+				<metadata-artifact status="no" details="" size="42125" time="0" location="/home/knoldus/.ivy2/cache/org.apache.logging.log4j/log4j-slf4j-impl/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.11.1/log4j-slf4j-impl-2.11.1.pom"/>
 				<caller organisation="org.scala-sbt" name="main_2.12" conf="compile, runtime" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.2.8"/>
 				<artifacts>
 					<artifact name="log4j-slf4j-impl" type="jar" ext="jar" status="no" details="" size="23241" time="0" location="/home/knoldus/.ivy2/cache/org.apache.logging.log4j/log4j-slf4j-impl/jars/log4j-slf4j-impl-2.11.1.jar">
