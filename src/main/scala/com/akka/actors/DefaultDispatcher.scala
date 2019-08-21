@@ -27,8 +27,8 @@ object DefaultDispatcher extends App {
   println("\nStep 6: Akka default dispatcher maximum parallelism")
   val dispatcherParallelismMax = defaultDispatcherConfig.getInt("fork-join-executor.parallelism-max")
   println(s"$dispatcherParallelismMax")
-  implicit val executionContext = system.dispatchers.lookup("fixed-thread-pool")
-  val isTerminate=system.terminate()
+ // implicit val executionContext = system.dispatchers.lookup("fixed-thread-pool")
+  system.terminate()
 }
 
 
